@@ -1,0 +1,8 @@
+d:\RockCommercial\FromScractch\bin\Debug\netcoreapp1.1\FromScractch.deps.json
+d:\RockCommercial\FromScractch\bin\Debug\netcoreapp1.1\FromScractch.runtimeconfig.json
+d:\RockCommercial\FromScractch\bin\Debug\netcoreapp1.1\FromScractch.runtimeconfig.dev.json
+d:\RockCommercial\FromScractch\bin\Debug\netcoreapp1.1\FromScractch.dll
+d:\RockCommercial\FromScractch\bin\Debug\netcoreapp1.1\FromScractch.pdb
+d:\RockCommercial\FromScractch\obj\Debug\netcoreapp1.1\FromScractch.AssemblyInfo.cs
+d:\RockCommercial\FromScractch\obj\Debug\netcoreapp1.1\FromScractch.dll
+d:\RockCommercial\FromScractch\obj\Debug\netcoreapp1.1\FromScractch.pdb
