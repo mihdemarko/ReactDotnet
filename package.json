@@ -1,10 +1,11 @@
 {
-  "name": "FromScractch",
+  "name": "from_scractch",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-watch": ".\\node_modules\\.bin\\concurrently \".\\node_modules\\.bin\\webpack -w\" \"dotnet run\""
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "babel-plugin-dynamic-import-webpack": "^1.0.1",
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
+    "concurrently": "^3.5.0",
     "css-loader": "^0.28.4",
     "expose-loader": "^0.7.3",
     "jsx-loader": "^0.13.2",
@@ -26,6 +28,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
+    "redux": "^3.7.1",
     "remarkable": "^1.7.1"
   }
 }
