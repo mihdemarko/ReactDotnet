@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-watch": ".\\node_modules\\.bin\\concurrently \".\\node_modules\\.bin\\webpack -w\" \"dotnet run\""
+    "start-watch": ".\\node_modules\\.bin\\concurrently --allow-restart \".\\node_modules\\.bin\\webpack -w\" \"dotnet run\""
   },
   "keywords": [],
   "author": "",

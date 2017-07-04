@@ -1,18 +1,20 @@
 import React from 'react';
 import Square from '../Square/Square';
 import styles from './board.css';
+import {calculateWinner} from '../../helpers/helperFunctions'
 
 class Board extends React.Component {
+
   renderSquare(i) {
-    return <Square value={i}/>;
+    return <Square 
+              value={this.props.squares[i]}
+              onClick={() => this.props.onClick(i)}
+            />;
   }
 
   render() {
-    const status = 'Next player: X';
-
     return (
       <div style={styles}>
-        <div className="status">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
