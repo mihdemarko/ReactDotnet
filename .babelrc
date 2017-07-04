@@ -1,4 +1,4 @@
 {
     "presets": ["react"],
-    "plugins": ["dynamic-import-webpack"]
+    "plugins": ["dynamic-import-webpack", "transform-es2015-destructuring", "transform-object-rest-spread"]
 }
