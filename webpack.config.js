@@ -16,7 +16,12 @@ module.exports = {
         test:/\.css$/,
         use: [
           'style-loader',
-          'css-loader'
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          }
         ]
       },
       {
@@ -26,13 +31,8 @@ module.exports = {
         ]
       }
     ],
-    // loaders: [
-    //   // Transform JSX in .jsx files
-    //   { test: /\.jsx$/, loader: 'babel-loader' }
-    // ],
   },
   resolve: {
-    // Allow require('./blah') to require blah.jsx
     extensions: ['.js', '.jsx']
   },
   devtool: "cheap-eval-source-map"

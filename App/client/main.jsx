@@ -2,48 +2,48 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Game from './components/Game/Game';
 import './body.css';
-import {applyMiddleware, combineReducers, createStore} from 'redux';
+import {applyMiddleware, createStore} from 'redux';
+import axios from 'axios';
 import {createLogger} from 'redux-logger';
+import thunk from 'redux-thunk';
+import promise from "redux-promise-middleware";
 
-document.body.classList.add('body', 'ol', 'ul');
-
-const userReducer = (state={}, action) => {
-  switch(action.type){
-    case "CHANGE_NAME": {
-      state = {...state, name: action.payload};
-      break;
-    }
-    case "CHANGE_AGE": {
-      state = {...state, age: action.payload};
-      break;
-    }
+const initialState = {
+  fetching: false,
+  fetched: false,
+  users:[],
+  error: null,
+}
+const reducer = (state = initialState, action) => {
+  if (action.type === "FETCH_USER_PENDING") {
+      return {
+        ...state,
+        fetching: true
+      }
+  } else if (action.type === "FETCH_USER_FULFILLED") {
+      let users = state.users.concat(action.payload.data)
+      return {
+        ...state,
+        fetching: false,
+        users: users
+      }
+  } else if (action.type === "FETCH_USER_REJECTED") {
+      return {
+        ...state,
+        fetching: false,
+        error: action.payload
+      }
   }
-  return state;
+  return state
 }
 
-const tweetsReducer = (state=[], action ) => {
-  return state;
-}
+const middleware = applyMiddleware(promise(), thunk, createLogger());
+const store = createStore(reducer, middleware);
 
-const reducers = combineReducers({
-  user: userReducer,
-  tweets: tweetsReducer
+store.dispatch ({
+  type:"FETCH_USER",
+  payload: axios.get("https://jsonplaceholder.typicode.com/Users/1")
 })
-const middleware = applyMiddleware(createLogger());
-const store = createStore(reducers, middleware);
-
-store.subscribe(() => {
-  console.log ('store changed', store.getState())
-})
-
-
-
-
-store.dispatch({type:"CHANGE_NAME", payload: "Stan"})
-store.dispatch({type:"CHANGE_AGE", payload: 18})
-store.dispatch({type:"CHANGE_AGE", payload: 7})
-store.dispatch({type:"INC", payload: 9})
-store.dispatch({type:"DEC", payload: 10})
 
 ReactDOM.render(
   <Game />,
