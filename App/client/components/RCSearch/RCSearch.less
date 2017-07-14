@@ -1,0 +1,25 @@
+.wrapper {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 30px 30px 30px 30px;
+    .controlPanel {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    .filterPanel {
+        margin-top: 20px;
+    }
+    .mapAndResults {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .wrapper {
+        .mapAndResults {
+            flex-flow: row nowrap;
+        }
+    }
+}

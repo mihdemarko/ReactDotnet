@@ -23,6 +23,8 @@
     "css-loader": "^0.28.4",
     "expose-loader": "^0.7.3",
     "jsx-loader": "^0.13.2",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
     "redux-logger": "^3.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.0.0"
